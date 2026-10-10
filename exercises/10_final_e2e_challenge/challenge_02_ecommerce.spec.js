@@ -45,12 +45,15 @@ test('complete full end-to-end e-commerce store purchase and order confirmation'
   const gotoCheckoutBtn = page.locator('#goto-checkout-btn');
 
   // TODO 1: Click both add-to-cart buttons
+  // Hint: Click the headphones and laptop stand add buttons.
   /* WRITE YOUR CODE HERE */
 
   // TODO 2: Assert cartItemCount is '2' and cartSum is '$200'
+  // Hint: Verify the item count and total sum elements reflect the added items.
   /* WRITE YOUR CODE HERE */
 
   // TODO 3: Click 'Proceed to Checkout'
+  // Hint: Click the checkout navigation button to transition to the form.
   /* WRITE YOUR CODE HERE */
 
   // STEP 2: Fill out checkout form
@@ -60,6 +63,7 @@ test('complete full end-to-end e-commerce store purchase and order confirmation'
   const placeOrderBtn = page.locator('#place-order-btn');
 
   // TODO 4: Fill in customer and payment information, then click Place Order
+  // Hint: Fill in name ('Alex Rivera'), address ('123 Automation Way'), and card number ('4242 4242 4242 4242'), then click the submit button.
   /* WRITE YOUR CODE HERE */
 
   // STEP 3: Validate confirmation
@@ -68,9 +72,6 @@ test('complete full end-to-end e-commerce store purchase and order confirmation'
   const confirmTotal = page.locator('#confirm-total');
 
   // TODO 5: Verify confirmation screen and final totals
-  // Hint:
-  // await expect(confirmationStep).toBeVisible();
-  // await expect(confirmName).toHaveText('Alex Rivera');
-  // await expect(confirmTotal).toHaveText('$200');
+  // Hint: Assert that the confirmation container is visible, the greeting shows the buyer's name, and the total matches $200.
   /* WRITE YOUR CODE HERE */
 });

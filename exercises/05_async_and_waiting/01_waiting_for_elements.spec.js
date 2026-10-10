@@ -42,14 +42,14 @@ test('should wait for async remote data to load without manual sleeps', async ({
   await fetchBtn.click();
 
   // TODO 1: Assert that loadedContent becomes visible
-  // Hint: await expect(loadedContent).toBeVisible();
+  // Hint: Remember that web-first assertions automatically wait for elements to appear.
   /* WRITE YOUR CODE HERE */
 
   // TODO 2: Assert that loadingSpinner is now hidden
-  // Hint: await expect(loadingSpinner).toBeHidden();
+  // Hint: Verify the loading indicator disappears once fetching completes.
   /* WRITE YOUR CODE HERE */
 
   // TODO 3: Verify dataText content
-  // Hint: await expect(dataText).toHaveText('User records synchronized with cloud.');
+  // Hint: Assert the exact confirmation message inside the data text element.
   /* WRITE YOUR CODE HERE */
 });

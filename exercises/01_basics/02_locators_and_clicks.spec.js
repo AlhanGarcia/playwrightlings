@@ -39,18 +39,18 @@ test('should click button and update status text', async ({ page }) => {
   const statusElement = page.locator('#status');
 
   // TODO 1: Assert that statusElement initially has text 'Button not clicked yet'
-  // Hint: await expect(statusElement).toHaveText('Button not clicked yet');
+  // Hint: Check the text content of statusElement before doing any clicks.
   /* WRITE YOUR CODE HERE */
 
-  // TODO 2: Locate the button with role 'button' and name 'Click Me'
-  // Hint: const clickBtn = page.getByRole('button', { name: 'Click Me' });
+  // TODO 2: Locate the button with accessible role 'button' and accessible name 'Click Me'
+  // Hint: Pass the role and an options object with the button name to getByRole.
   const clickBtn = null; // Replace null with locator
 
   // TODO 3: Click the button
-  // Hint: await clickBtn.click();
+  // Hint: Remember that clicking is an asynchronous action that must be waited for.
   /* WRITE YOUR CODE HERE */
 
   // TODO 4: Verify the status message updated to 'Button was clicked!'
-  // Hint: await expect(statusElement).toHaveText('Button was clicked!');
+  // Hint: Test the text of statusElement again after clicking.
   /* WRITE YOUR CODE HERE */
 });

@@ -49,28 +49,26 @@ test('complete E2E login, error handling, dashboard, and logout journey', async 
   await signInButton.click();
 
   // TODO 1: Assert that errorMsg is visible
-  // Hint: await expect(errorMsg).toBeVisible();
+  // Hint: Verify the error message appears after failed login.
   /* WRITE YOUR CODE HERE */
 
   // STEP 2: Fill in valid credentials
-  // Hint: await emailInput.fill('tester@playwrightlings.io');
-  //       await passwordInput.fill('Secret123!');
-  //       await signInButton.click();
+  // Hint: Clear or fill the email and password inputs with valid credentials, then submit.
   /* WRITE YOUR CODE HERE */
 
   // TODO 2: Assert dashboard is visible
-  // Hint: await expect(dashboard).toBeVisible();
+  // Hint: Check that the dashboard container is visible upon successful login.
   /* WRITE YOUR CODE HERE */
 
   // TODO 3: Verify the logged-in email greeting contains 'tester@playwrightlings.io'
-  // Hint: await expect(page.locator('#logged-email')).toHaveText('tester@playwrightlings.io');
+  // Hint: Verify that the text in the logged-email element matches the logged-in user.
   /* WRITE YOUR CODE HERE */
 
   // TODO 4: Click the logout button
-  // Hint: await logoutButton.click();
+  // Hint: Trigger the logout action.
   /* WRITE YOUR CODE HERE */
 
   // TODO 5: Verify that the dashboard is now hidden
-  // Hint: await expect(dashboard).toBeHidden();
+  // Hint: Assert that the dashboard is no longer visible after logging out.
   /* WRITE YOUR CODE HERE */
 });

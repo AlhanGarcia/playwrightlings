@@ -27,14 +27,7 @@ const { test, expect } = require('@playwright/test');
 
 test('should mock backend API response with custom user data', async ({ page }) => {
   // TODO 1: Intercept network request to '**/api/user' using page.route
-  // Hint:
-  // await page.route('**/api/user', async (route) => {
-  //   await route.fulfill({
-  //     status: 200,
-  //     contentType: 'application/json',
-  //     json: { name: 'Super Tester', role: 'Staff QA' },
-  //   });
-  // });
+  // Hint: Intercept the route before the page request occurs and fulfill it with status 200, json content type, and an object with name 'Super Tester' and role 'Staff QA'.
   /* WRITE YOUR CODE HERE */
 
   await page.goto('/08_network.html');
@@ -43,10 +36,10 @@ test('should mock backend API response with custom user data', async ({ page }) 
   await page.getByRole('button', { name: 'Load User Profile' }).click();
 
   // TODO 2: Verify that #user-name displays 'Super Tester'
-  // Hint: await expect(page.locator('#user-name')).toHaveText('Super Tester');
+  // Hint: Assert the text inside the user-name span.
   /* WRITE YOUR CODE HERE */
 
   // TODO 3: Verify that #user-role displays 'Staff QA'
-  // Hint: await expect(page.locator('#user-role')).toHaveText('Staff QA');
+  // Hint: Assert the text inside the user-role span.
   /* WRITE YOUR CODE HERE */
 });

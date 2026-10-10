@@ -39,18 +39,18 @@ test('should use web-first assertions for visibility and element count', async (
   const listItems = page.locator('#items-list li');
 
   // TODO 1: Assert that secretMsg is initially hidden
-  // Hint: await expect(secretMsg).toBeHidden();
+  // Hint: Use Playwright's web-first assertion to ensure the element is not visible.
   /* WRITE YOUR CODE HERE */
 
   // TODO 2: Click the toggle button
-  // Hint: await toggleBtn.click();
+  // Hint: Invoke the click action on the toggle button.
   /* WRITE YOUR CODE HERE */
 
   // TODO 3: Assert that secretMsg is now visible
-  // Hint: await expect(secretMsg).toBeVisible();
+  // Hint: Verify the secret message element appears after the click.
   /* WRITE YOUR CODE HERE */
 
   // TODO 4: Assert that listItems has a count of 3
-  // Hint: await expect(listItems).toHaveCount(3);
+  // Hint: Use Playwright's assertion to test the number of matching elements in the DOM.
   /* WRITE YOUR CODE HERE */
 });

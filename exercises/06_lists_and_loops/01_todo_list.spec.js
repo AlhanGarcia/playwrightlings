@@ -40,22 +40,20 @@ test('should add item to list and check all items with loop', async ({ page }) =
   await expect(todoItems).toHaveCount(3);
 
   // TODO 1: Fill the input with 'Write Playwright tests' and click Add
+  // Hint: Type the new todo title into the input, then click the Add button.
   /* WRITE YOUR CODE HERE */
 
   // TODO 2: Assert that todoItems now has a count of 4
-  // Hint: await expect(todoItems).toHaveCount(4);
+  // Hint: Check the updated number of elements in the todo list.
   /* WRITE YOUR CODE HERE */
 
   // TODO 3: Get all checkboxes and check each one using for...of
   const checkboxes = await page.locator('.todo-item input[type="checkbox"]').all();
   
-  // Hint:
-  // for (const box of checkboxes) {
-  //   await box.check();
-  // }
+  // Hint: Iterate over the array of checkbox locators using a for...of loop and check each one.
   /* WRITE YOUR CODE HERE */
 
   // TODO 4: Verify the first checkbox is checked
-  // Hint: await expect(checkboxes[0]).toBeChecked();
+  // Hint: Check the state of the first item in the checkboxes array.
   /* WRITE YOUR CODE HERE */
 });

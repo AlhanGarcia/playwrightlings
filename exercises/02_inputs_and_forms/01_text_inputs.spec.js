@@ -35,18 +35,18 @@ test('should fill text input and submit form', async ({ page }) => {
   await page.goto('/02_forms.html');
 
   // TODO 1: Declare a variable named username with the string 'coder_pro'
-  // const username = 'coder_pro';
+  // Hint: Use const to declare a variable holding this string.
   /* WRITE YOUR CODE HERE */
 
-  // TODO 2: Locate the input by label 'Username' and fill it with the username variable
-  // Hint: await page.getByLabel('Username').fill(username);
+  // TODO 2: Locate the input by label 'Username' and fill it with your username variable
+  // Hint: Target the input associated with the 'Username' label and type your variable value into it.
   /* WRITE YOUR CODE HERE */
 
   // TODO 3: Click the 'Save Profile' button
-  // Hint: await page.getByRole('button', { name: 'Save Profile' }).click();
+  // Hint: Locate the button element and perform the click action.
   /* WRITE YOUR CODE HERE */
 
   // TODO 4: Verify that the element with id 'result' contains your username
-  // Hint: await expect(page.locator('#result')).toContainText('Saved: coder_pro');
+  // Hint: Assert that the result element contains the submitted username substring.
   /* WRITE YOUR CODE HERE */
 });

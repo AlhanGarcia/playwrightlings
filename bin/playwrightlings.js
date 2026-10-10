@@ -214,7 +214,11 @@ function showHint(exId) {
 
   console.log(pc.bold(pc.cyan(`\n💡 Hint for ${ex.title}:`)));
   console.log(pc.yellow(`   ${ex.hint}\n`));
-  console.log(pc.dim(`📖 Read full explanation in: ${ex.readme}\n`));
+  console.log(pc.dim(`📖 Read full explanation in: ${ex.readme}`));
+  if (ex.solution) {
+    console.log(pc.dim(`🔍 Reference solution available at: `) + pc.cyan(ex.solution));
+  }
+  console.log('');
 }
 
 function listExercises() {

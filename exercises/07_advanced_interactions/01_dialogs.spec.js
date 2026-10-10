@@ -44,18 +44,14 @@ test('should handle native browser dialogs with event listeners', async ({ page 
   await expect(output).toHaveText('Alert acknowledged');
 
   // TODO 1: Set up a listener for the prompt dialog
-  // Hint:
-  // page.once('dialog', async (dialog) => {
-  //   expect(dialog.type()).toBe('prompt');
-  //   await dialog.accept('Playwright Explorer');
-  // });
+  // Hint: Listen for the dialog event before triggering the prompt. Check that the dialog type is 'prompt' and accept it with the string 'Playwright Explorer'.
   /* WRITE YOUR CODE HERE */
 
   // TODO 2: Click the 'Show Prompt' button
-  // Hint: await page.getByRole('button', { name: 'Show Prompt' }).click();
+  // Hint: Locate and click the button that opens the prompt dialog.
   /* WRITE YOUR CODE HERE */
 
   // TODO 3: Assert that output contains 'User entered: Playwright Explorer'
-  // Hint: await expect(output).toHaveText('User entered: Playwright Explorer');
+  // Hint: Verify the updated output element text after the dialog is closed.
   /* WRITE YOUR CODE HERE */
 });

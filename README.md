@@ -102,7 +102,14 @@ exercises/
 
 ---
 
-## 👥 Contributing
+## � Hints & Reference Solutions
+
+- Run `npm run hint` at any time to receive a conceptual hint for your active exercise.
+- If you get stuck, reference solutions for all exercises and challenges are provided in the [`solutions/`](./solutions) directory.
+
+---
+
+## �👥 Contributing
 
 Contributions, feedback, and additional exercises are welcome!
 Feel free to open an issue or submit a pull request.

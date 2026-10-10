@@ -33,9 +33,7 @@ class ShopPage {
     this.cartTotal = page.locator('#cart-total');
 
     // TODO 1: Initialize locators for keyboard & mouse "Add to Cart" buttons
-    // Hint:
-    // this.keyboardBtn = page.locator('[data-testid="product-keyboard"] .add-to-cart-btn');
-    // this.mouseBtn = page.locator('[data-testid="product-mouse"] .add-to-cart-btn');
+    // Hint: Locate each product card using data-testid attributes, then locate the add-to-cart button within each card.
     /* WRITE YOUR CODE HERE */
   }
 
@@ -45,13 +43,13 @@ class ShopPage {
 
   async addKeyboard() {
     // TODO 2: Click the keyboard button
-    // Hint: await this.keyboardBtn.click();
+    // Hint: Call the click action on your stored keyboard locator.
     /* WRITE YOUR CODE HERE */
   }
 
   async addMouse() {
     // TODO 3: Click the mouse button
-    // Hint: await this.mouseBtn.click();
+    // Hint: Call the click action on your stored mouse locator.
     /* WRITE YOUR CODE HERE */
   }
 }
@@ -60,7 +58,8 @@ test('should use Page Object Model to add items to cart', async ({ page }) => {
   const shop = new ShopPage(page);
   await shop.goto();
 
-  // TODO 4: Call addKeyboard() and addMouse() on shop
+  // TODO 4: Call addKeyboard() and addMouse() on the shop instance
+  // Hint: Invoke both helper methods on the class instance to add both items to the cart.
   /* WRITE YOUR CODE HERE */
 
   // Assertions

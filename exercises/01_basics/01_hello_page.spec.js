@@ -30,19 +30,19 @@
 const { test, expect } = require('@playwright/test');
 
 test('should open the basics page and verify title and heading', async ({ page }) => {
-  // TODO 1: Navigate to '/01_basics.html'
-  // Hint: Replace the empty string below with '/01_basics.html'
+  // TODO 1: Navigate to the lesson page
+  // Hint: Provide the relative path '/01_basics.html' as an argument to page.goto()
   await page.goto('');
 
-  // TODO 2: Verify the title of the page
-  // The page title should be: 'Playwrightlings - Lesson 1: Basics'
-  // Hint: await expect(page).toHaveTitle('Playwrightlings - Lesson 1: Basics');
+  // TODO 2: Verify the title of the browser tab
+  // Target title: 'Playwrightlings - Lesson 1: Basics'
+  // Hint: Look up how Playwright tests the page title against an expected string.
   /* WRITE YOUR CODE HERE */
 
   // TODO 3: Verify the main heading text
   // In Playwright, page.getByRole('heading', { level: 1 }) finds the <h1> tag.
   const heading = page.getByRole('heading', { level: 1 });
   
-  // Hint: await expect(heading).toHaveText('Welcome to Playwright');
+  // Hint: Check the text content of the heading locator for 'Welcome to Playwright'.
   /* WRITE YOUR CODE HERE */
 });

@@ -34,24 +34,25 @@ const { test, expect } = require('@playwright/test');
 test('should select dropdown option and check newsletter box', async ({ page }) => {
   await page.goto('/02_forms.html');
 
-  // TODO 1: Select 'tester' in the 'Role' dropdown
-  // Hint: await page.getByLabel('Role').selectOption('tester');
+  // TODO 1: Select the 'tester' option in the 'Role' dropdown
+  // Hint: Target the dropdown associated with label 'Role' and choose the option with value 'tester'.
   /* WRITE YOUR CODE HERE */
 
-  // TODO 2: Find the checkbox by role or label and check it
+  // TODO 2: Check the 'Subscribe to newsletter' checkbox
   const newsletterCheckbox = page.getByLabel('Subscribe to newsletter');
-  // Hint: await newsletterCheckbox.check();
+  // Hint: Perform the action that marks this checkbox as checked.
   /* WRITE YOUR CODE HERE */
 
   // TODO 3: Verify the checkbox is checked
-  // Hint: await expect(newsletterCheckbox).toBeChecked();
+  // Hint: Use Playwright's assertion specifically designed for verifying checkboxes.
   /* WRITE YOUR CODE HERE */
 
   // TODO 4: Click the 'Save Profile' button
+  // Hint: Locate the submission button and click it.
   /* WRITE YOUR CODE HERE */
 
   // TODO 5: Verify the #result contains 'Role: tester | Newsletter: true'
   const resultDiv = page.locator('#result');
-  // Hint: await expect(resultDiv).toContainText('Role: tester | Newsletter: true');
+  // Hint: Verify the result container's text content matches the expected status.
   /* WRITE YOUR CODE HERE */
 });
