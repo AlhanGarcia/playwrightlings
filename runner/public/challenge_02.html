@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Playwrightlings - E2E Challenge 2: Checkout</title>
+  <style>
+    body { font-family: sans-serif; margin: 40px; background: #f8fafc; }
+    .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+    .step { display: none; }
+    .step.active { display: block; }
+    .product-row { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding: 12px 0; }
+    button { background: #3b82f6; color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+    button:disabled { background: #94a3b8; cursor: not-allowed; }
+    input { width: 100%; padding: 8px; margin: 6px 0 16px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box; }
+    .success-badge { background: #dcfce7; color: #15803d; padding: 16px; border-radius: 6px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Step 1: Catalog -->
+    <div id="step-catalog" class="step active">
+      <h2>Select Your Items</h2>
+      <div class="product-row" id="prod-headphones">
+        <span>🎧 Noise-Cancelling Headphones ($150)</span>
+        <button id="add-headphones">Add to Cart</button>
+      </div>
+      <div class="product-row" id="prod-stand">
+        <span>📐 Aluminum Laptop Stand ($50)</span>
+        <button id="add-stand">Add to Cart</button>
+      </div>
+      <p style="margin-top: 20px;">Cart: <span id="cart-item-count">0</span> items (<span id="cart-sum">$0</span>)</p>
+      <button id="goto-checkout-btn" disabled>Proceed to Checkout</button>
+    </div>
+
+    <!-- Step 2: Shipping & Payment -->
+    <div id="step-checkout" class="step">
+      <h2>Shipping & Payment Details</h2>
+      <form id="checkout-form">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" required placeholder="Alex Rivera">
+
+        <label for="address">Shipping Address</label>
+        <input type="text" id="address" required placeholder="123 Automation Way">
+
+        <label for="cardNumber">Credit Card Number</label>
+        <input type="text" id="cardNumber" required placeholder="4242 4242 4242 4242">
+
+        <p>Order Summary: <strong id="checkout-total">$0</strong></p>
+        <button type="submit" id="place-order-btn">Place Order</button>
+      </form>
+    </div>
+
+    <!-- Step 3: Confirmation -->
+    <div id="step-confirmation" class="step">
+      <div class="success-badge">
+        <h2>🎉 Order Confirmed!</h2>
+        <p>Thank you, <span id="confirm-name"></span>!</p>
+        <p>Your order for <strong id="confirm-total"></strong> has been placed.</p>
+        <p>Confirmation ID: <span id="order-id">ORD-98432</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let itemCount = 0;
+    let orderTotal = 0;
+
+    const countSpan = document.getElementById('cart-item-count');
+    const sumSpan = document.getElementById('cart-sum');
+    const checkoutBtn = document.getElementById('goto-checkout-btn');
+
+    function updateCart(price) {
+      itemCount++;
+      orderTotal += price;
+      countSpan.textContent = itemCount;
+      sumSpan.textContent = '$' + orderTotal;
+      checkoutBtn.disabled = itemCount === 0;
+    }
+
+    document.getElementById('add-headphones').addEventListener('click', () => updateCart(150));
+    document.getElementById('add-stand').addEventListener('click', () => updateCart(50));
+
+    checkoutBtn.addEventListener('click', () => {
+      document.getElementById('step-catalog').classList.remove('active');
+      document.getElementById('step-checkout').classList.add('active');
+      document.getElementById('checkout-total').textContent = '$' + orderTotal;
+    });
+
+    document.getElementById('checkout-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value;
+      document.getElementById('step-checkout').classList.remove('active');
+      document.getElementById('step-confirmation').classList.add('active');
+      document.getElementById('confirm-name').textContent = name;
+      document.getElementById('confirm-total').textContent = '$' + orderTotal;
+    });
+  </script>
+</body>
+</html>

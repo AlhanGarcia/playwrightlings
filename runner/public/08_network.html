@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Playwrightlings - Lesson 8: Network</title>
+  <style>
+    body { font-family: sans-serif; margin: 40px; }
+    .card { background: #f1f5f9; padding: 20px; border-radius: 8px; max-width: 400px; }
+    button { padding: 8px 16px; margin-bottom: 12px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>User Profile (From API)</h2>
+    <button id="load-user-btn">Load User Profile</button>
+    <div id="profile-card">
+      <p>Name: <span id="user-name">Unknown</span></p>
+      <p>Role: <span id="user-role">Unknown</span></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('load-user-btn').addEventListener('click', async () => {
+      try {
+        const res = await fetch('/api/user');
+        const data = await res.json();
+        document.getElementById('user-name').textContent = data.name;
+        document.getElementById('user-role').textContent = data.role;
+      } catch (e) {
+        document.getElementById('user-name').textContent = 'Error loading user';
+      }
+    });
+  </script>
+</body>
+</html>

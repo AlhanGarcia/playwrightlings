@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Playwrightlings - Lesson 7: Dialogs</title>
+  <style>
+    body { font-family: sans-serif; margin: 40px; }
+    button { padding: 10px 16px; margin-right: 10px; cursor: pointer; }
+    #output { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>Dialog Interactions</h2>
+  <button id="alert-btn">Show Alert</button>
+  <button id="confirm-btn">Show Confirm</button>
+  <button id="prompt-btn">Show Prompt</button>
+  <p id="output">No action yet.</p>
+
+  <script>
+    const output = document.getElementById('output');
+
+    document.getElementById('alert-btn').addEventListener('click', () => {
+      alert('This is a native alert box!');
+      output.textContent = 'Alert acknowledged';
+    });
+
+    document.getElementById('confirm-btn').addEventListener('click', () => {
+      const ok = confirm('Do you want to proceed with deletion?');
+      output.textContent = ok ? 'Confirmed: yes' : 'Confirmed: no';
+    });
+
+    document.getElementById('prompt-btn').addEventListener('click', () => {
+      const name = prompt('Please enter your name:');
+      output.textContent = name ? `User entered: ${name}` : 'Prompt cancelled';
+    });
+  </script>
+</body>
+</html>

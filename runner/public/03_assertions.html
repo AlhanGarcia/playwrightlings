@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Playwrightlings - Lesson 3: Assertions</title>
+  <style>
+    body { font-family: sans-serif; margin: 40px; background: #fdfdfd; }
+    .box { border: 1px solid #ccc; padding: 20px; border-radius: 6px; max-width: 500px; }
+    .hidden { display: none; }
+    .badge { display: inline-block; padding: 4px 8px; border-radius: 4px; background: #e0e7ff; color: #4338ca; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Assertions Playground</h2>
+    <span class="badge" id="status-badge">Active</span>
+    <p id="msg-text">Welcome, learner!</p>
+    <button id="toggle-btn">Toggle Secret</button>
+    <p id="secret-message" class="hidden">🎉 You found the hidden message!</p>
+    <ul id="items-list">
+      <li>Item Alpha</li>
+      <li>Item Beta</li>
+      <li>Item Gamma</li>
+    </ul>
+  </div>
+  <script>
+    document.getElementById('toggle-btn').addEventListener('click', () => {
+      const sec = document.getElementById('secret-message');
+      sec.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Playwrightlings - Lesson 6: Lists</title>
+  <style>
+    body { font-family: sans-serif; margin: 40px; background: #fafafa; }
+    .todo-app { max-width: 400px; background: white; padding: 20px; border-radius: 8px; border: 1px solid #ddd; }
+    ul { list-style: none; padding: 0; }
+    li { display: flex; justify-content: space-between; align-items: center; padding: 8px; border-bottom: 1px solid #eee; }
+    .completed { text-decoration: line-through; color: #888; }
+    input[type="text"] { width: 70%; padding: 6px; }
+    button { padding: 6px 12px; }
+  </style>
+</head>
+<body>
+  <div class="todo-app">
+    <h2>Todo Tracker</h2>
+    <div>
+      <input type="text" id="new-todo" placeholder="What needs to be done?">
+      <button id="add-btn">Add</button>
+    </div>
+    <ul id="todo-list">
+      <li class="todo-item"><span class="title">Learn Playwright</span><input type="checkbox" class="toggle"></li>
+      <li class="todo-item"><span class="title">Master JavaScript</span><input type="checkbox" class="toggle"></li>
+      <li class="todo-item"><span class="title">Build automation framework</span><input type="checkbox" class="toggle"></li>
+    </ul>
+    <p id="items-count">Total: 3 items</p>
+  </div>
+
+  <script>
+    const addBtn = document.getElementById('add-btn');
+    const input = document.getElementById('new-todo');
+    const list = document.getElementById('todo-list');
+    const count = document.getElementById('items-count');
+
+    function updateCount() {
+      count.textContent = `Total: ${list.children.length} items`;
+    }
+
+    addBtn.addEventListener('click', () => {
+      const val = input.value.trim();
+      if (!val) return;
+      const li = document.createElement('li');
+      li.className = 'todo-item';
+      li.innerHTML = `<span class="title">${val}</span><input type="checkbox" class="toggle">`;
+      list.appendChild(li);
+      input.value = '';
+      updateCount();
+    });
+
+    list.addEventListener('change', (e) => {
+      if (e.target.classList.contains('toggle')) {
+        const span = e.target.parentElement.querySelector('.title');
+        span.classList.toggle('completed', e.target.checked);
+      }
+    });
+  </script>
+</body>
+</html>

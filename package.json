@@ -1,0 +1,31 @@
+{
+  "name": "playwrightlings",
+  "version": "1.0.0",
+  "description": "An interactive, hands-on learning experience for Playwright and modern JavaScript from zero to E2E mastery",
+  "main": "bin/playwrightlings.js",
+  "bin": {
+    "playwrightlings": "./bin/playwrightlings.js"
+  },
+  "scripts": {
+    "start": "node bin/playwrightlings.js watch",
+    "watch": "node bin/playwrightlings.js watch",
+    "verify": "node bin/playwrightlings.js verify",
+    "hint": "node bin/playwrightlings.js hint",
+    "list": "node bin/playwrightlings.js list",
+    "run": "node bin/playwrightlings.js run"
+  },
+  "keywords": [
+    "playwright",
+    "testing",
+    "learn-javascript",
+    "e2e",
+    "rustlings-style",
+    "interactive-tutorial"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@playwright/test": "^1.43.0",
+    "picocolors": "^1.0.0"
+  }
+}
